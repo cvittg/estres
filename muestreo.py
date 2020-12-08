@@ -48,9 +48,11 @@ for t in range(73):
         etiqueta.append('mal regada')
 df = pd.DataFrame(list(zip(renglon, columna,distancia,tiempo,etiqueta)), columns =['renglon', 'columna','distancia','tiempo','etiqueta'])
 print(df.head())
+# verifica si la altura cambia en el trancurso de un dia
 variacion_altura_al_dia=df[(df['renglon']==35)&(df['columna']==166)]
+variacion_altura_al_dia.plot(x="tiempo", y=["distancia"])
 #cv.imshow('imagen de profundidad',img)
 #k = cv.waitKey(0)
-plt.imshow(img, cmap = 'gray', interpolation = 'bicubic')
-plt.xticks([]), plt.yticks([])  # to hide tick values on X and Y axis
+#plt.imshow(img, cmap = 'gray', interpolation = 'bicubic')
+#plt.xticks([]), plt.yticks([])  # to hide tick values on X and Y axis
 plt.show()
